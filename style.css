@@ -123,26 +123,7 @@
     color: var(--primary-clr);
   }
   
-  /* Utility Classes */
-  .d-flex {
-    display: flex;
-  }
-  
-  .justify-space-around {
-    justify-content: space-around;
-  }
-  
-  .justify-space-center {
-    justify-content: center;
-  }
-  
-  .align-items-center {
-    align-items: center;
-  }
-  
-  .f-col {
-    flex-direction: column;
-  }
+ 
   
   /* Media Query for Responsive */
   @media screen and (max-width: 307px) {
