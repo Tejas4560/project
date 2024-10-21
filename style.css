@@ -1,19 +1,28 @@
-* {
+:root {
+    --primary-bg: #66e3e2;
+    --accent-bg: #18bd9e;
+    --primary-clr: #000;
+    --secondary-clr: #fff;
+    --box-shadow: 0px 0px 19px 0px var(--accent-bg);
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #66e3e2;
-}
-
-.weatherContainer {
+    background-color: var(--primary-bg);
+  }
+  
+  .weatherContainer {
     margin: 2rem;
     padding: 2rem 1rem;
     border-radius: 1rem;
@@ -21,105 +30,129 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0px 0px 19px 0px #18bd9e;
-}
-
-#weatherForm input {
-    border: none;
-    color: black;
-    outline: none;
-    font-size: 1rem;
-    font-family: sans-serif;
-    background: transparent;
-}
-
-#weatherForm ul li {
-    list-style: none;
-}
-
-.searchBtn {
-    background: transparent;
-    border: none;
-}
-
-.searchBtn ul li {
-    list-style: none;
-    font-size: 1.2rem;
-}
-
-#weatherForm {
+    box-shadow: var(--box-shadow);
+    background-color: var(--secondary-clr);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .weatherContainer:hover {
+    transform: scale(1.02);
+  }
+  
+  #weatherForm {
     display: flex;
     justify-content: space-around;
-}
-
-.appHeading {
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  #weatherForm input {
+    border: 2px solid var(--accent-bg);
+    color: var(--primary-clr);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    transition: border-color 0.3s;
+  }
+  
+  #weatherForm input:focus {
+    border-color: var(--primary-bg);
+  }
+  
+  #weatherForm ul li {
+    list-style: none;
+  }
+  
+  .searchBtn {
+    background: var(--accent-bg);
+    border: none;
+    color: var(--secondary-clr);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .searchBtn:hover {
+    background-color: var(--primary-bg);
+    color: var(--primary-clr);
+  }
+  
+  .appHeading {
     text-align: center;
     margin-bottom: 1rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-#city {
+    font-size: 2rem;
+    color: var(--primary-clr);
+    text-transform: uppercase;
+  }
+  
+  #city {
     text-transform: capitalize;
     text-align: center;
     margin-top: 1rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-.weatherContainer img {
-    width: 50%;
-}
-
-#temp {
-    word-spacing: -8px;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-#temp sup {
     font-size: 1.5rem;
-}
-
-.weatherMain {
-    font-family: sans-serif;
-}
-
-#todayTime,
-.todayDates {
-    font-family: sans-serif;
+    color: var(--primary-clr);
+  }
+  
+  .weatherContainer img {
+    width: 50%;
+    margin: 1rem 0;
+  }
+  
+  #temp {
+    font-size: 2.5rem;
+    color: var(--primary-clr);
+    margin-bottom: 1rem;
+  }
+  
+  #temp sup {
+    font-size: 1.5rem;
+  }
+  
+  .weatherMain {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--primary-clr);
+  }
+  
+  #todayTime,
+  .todayDates {
     line-height: 2rem;
-}
-
-
-/* Utility Classes */
-.d-flex {
+    font-size: 1rem;
+    color: var(--primary-clr);
+  }
+  
+  /* Utility Classes */
+  .d-flex {
     display: flex;
-}
-
-.justify-space-around {
+  }
+  
+  .justify-space-around {
     justify-content: space-around;
-}
-
-.justify-space-center {
+  }
+  
+  .justify-space-center {
     justify-content: center;
-}
-
-.align-items-center {
+  }
+  
+  .align-items-center {
     align-items: center;
-}
-
-.f-col {
+  }
+  
+  .f-col {
     flex-direction: column;
-}
-
-/* Media Query for Responsive */
-@media screen and (max-width: 307px) {
+  }
+  
+  /* Media Query for Responsive */
+  @media screen and (max-width: 307px) {
     #weatherForm {
-        flex-direction: column;
+      flex-direction: column;
     }
-
+  
     #weatherForm input {
-        text-align: center;
-        margin-bottom: 1rem;
+      text-align: center;
+      margin-bottom: 1rem;
     }
-}
+  }
+  
