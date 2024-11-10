@@ -1,4 +1,4 @@
-// Variabless
+
 const cityName = document.querySelector('#weatherInput');
 const searchBtn = document.querySelector('#searchBtn');
 const form = document.getElementById('weatherForm');
@@ -10,20 +10,20 @@ const dates = document.querySelector('.todayDates');
 const times = document.getElementById('todayTime');
 let date = new Date();
 
-// Function work when user input the city name
+
 form.addEventListener('submit', function (e) {
 
-    // preventDefault() to stop page reload
+    
     e.preventDefault();
 
-    // Updating the city name
+    
     let city = cityName.value;
     const myWeatherContainer = document.querySelector('.weatherContainer');
     const apiID = `931f131dde3f4ae2fcbc3289fc646471`;
-    // API URL
+    
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiID}`
 
-    // fetching data from the weather api
+    
     fetch(url).then((response) => {
         return response.json();
     }).then((data) => {
@@ -32,35 +32,34 @@ form.addEventListener('submit', function (e) {
         const weatherMain = data['weather'][0]['main'];
         weather.innerHTML = weatherMain;
 
-        // Updating the DOM
+    
         myCity.innerHTML = city;
         temp.innerHTML = `${tempValue}`
         weather.innerHTML = `${weatherMain}`
         temp.innerHTML = `${tempValue}<span><sup>o</sup>C</span.`;
 
-        // Updating the Images according to the weather
+        
         if (weatherMain == 'Clear') {
-            image.src = `./Images/sunny.png`
             myWeatherContainer.style.backgroundColor = '#ec6e4c'
         }
         if (weatherMain == 'Clouds') {
-            image.src = `./Images/clouds.png`
+            
             myWeatherContainer.style.backgroundColor = '#86d3d3'
         }
         if (weatherMain == 'Rain') {
-            image.src = `./Images/Rain.png`
+            
             myWeatherContainer.style.backgroundColor = '#494bcf'
         }
         if (weatherMain == 'Drizzle') {
-            image.src = `./Images/Drizzle.png`
+        
             myWeatherContainer.style.backgroundColor = '#8ecfcf'
         }
         if (weatherMain == 'Haze') {
-            image.src = `./Images/Drizzle.png`
+            
             myWeatherContainer.style.backgroundColor = '#d8ced2'
         }
 
-        // Updating dates
+    
         const currentMonth = date.getMonth();
         switch (currentMonth) {
             case 0:
@@ -101,7 +100,7 @@ form.addEventListener('submit', function (e) {
                 break;
         }
 
-        // Updating times       
+         
         function leftInterval() {
             const left = document.getElementById('todayTime')
             let leftDate = new Date();
